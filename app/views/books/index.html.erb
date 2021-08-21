@@ -1,1 +1,162 @@
-<h1>本一覧</h1>
+ <main>
+        <p id="notice"></p>
+        <div class='container px-5 px-sm-0'>
+
+  <div class='row'>
+    <div class='col-md-3'>
+      <h2>User info</h2>
+      <table class='table'>
+        <tr><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %></tr>
+        <tr>
+	        <th>name</th>
+	        <th><%= @user.name %></th>
+        </tr>
+        <tr>
+	        <th>introduction</th>
+	        <th><%= @user.introduction %></th>
+        </tr>
+    </table>
+
+<div class='row'>
+  <%= link_to "", edit_user_path(@user), {class: "btn btn-outline-secondary btn-block fas fa-user-cog"} %>
+</div>
+
+
+
+      <h2 class="mt-3">New book</h2>
+
+      <%= form_with model: @book, local:true do |f| %>
+        <h4>Title</h4>
+        <%= f.text_field :title %>
+        <h4>Opinion</h4>
+        <%= f.text_area :body %>
+        <%= f.submit 'Create Book', {class: "btn btn-success"} %>
+      <% end %>
+    </div>
+
+
+
+
+    <div class='col-md-8 offset-md-1'>
+      <h2>Books</h2>
+      <table class='table table-hover table-inverse'>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><a href="/users/14897">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" />
+</a>        </td>
+        <td><a class="book_12274" href="/books/12274">リーダブルコード</a></td>
+        <td>より良いコードを書くためのシンプルで実践的なテクニック。</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14898">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" />
+</a>        </td>
+        <td><a class="book_12275" href="/books/12275">トラブル知らずのシステム設計</a></td>
+        <td>システム設計の要点を図解で説明してくれます。</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14899">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" />
+</a>        </td>
+        <td><a class="book_12276" href="/books/12276">たのしいRuby</a></td>
+        <td>Rubyの入門におすすめです。</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14903">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" />
+</a>        </td>
+        <td><a class="book_12277" href="/books/12277">a</a></td>
+        <td>a</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14903">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" />
+</a>        </td>
+        <td><a class="book_12278" href="/books/12278">a</a></td>
+        <td>a</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14901">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" />
+</a>        </td>
+        <td><a class="book_12280" href="/books/12280">w</a></td>
+        <td>h</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14911">
+          <img class="attachment user profile_image" src="/attachments/b67604e56d62b972218aee528b01eb0b0e8e7660/store/fill/50/50/3127585773a0f6d36f24e43fcc25a20221cd5f79e966050c7408861bbef6/profile_image" />
+</a>        </td>
+        <td><a class="book_12281" href="/books/12281">リーダブルコード</a></td>
+        <td>aaa</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14912">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" />
+</a>        </td>
+        <td><a class="book_12282" href="/books/12282">ss</a></td>
+        <td>ss</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14900">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" />
+</a>        </td>
+        <td><a class="book_12283" href="/books/12283">ruby</a></td>
+        <td>test</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14914">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" />
+</a>        </td>
+        <td><a class="book_12284" href="/books/12284">sxad</a></td>
+        <td>sdac</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14903">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" />
+</a>        </td>
+        <td><a class="book_12285" href="/books/12285">a</a></td>
+        <td>a</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14903">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" />
+</a>        </td>
+        <td><a class="book_12286" href="/books/12286">wwwwq</a></td>
+        <td>wqwq</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14918">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" />
+</a>        </td>
+        <td><a class="book_12287" href="/books/12287">こんにちは</a></td>
+        <td>dfghjk</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14919">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" />
+</a>        </td>
+        <td><a class="book_12288" href="/books/12288">テスト</a></td>
+        <td>test</td>
+      </tr>
+      <tr>
+        <td><a href="/users/14921">
+          <img class="attachment user profile_image fallback" src="/assets/no-image-icon-d3f9e11cb2bb284b42e0810f94b03c50126f51f482ea43054b87c2b7ebaa01d5.jpg" />
+</a>        </td>
+        <td><a class="book_12289" href="/books/12289">qwe</a></td>
+        <td>asd</td>
+      </tr>
+  </tbody>
+</table>
+    </div>
+  </div>
+</div>
+      </main>
