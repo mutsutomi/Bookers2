@@ -20,7 +20,7 @@
             <% @users.each do |user| %>
               <tr>
                 <td>
-                  <%= link_to image_tag("/assets/images/no-image.jpg", class:"attachment user profile_image fallback"), user_path(user.id) %>
+                  <%= attachment_image_tag user, :profile_image, :fill, 40, 40, format: 'jpeg', fallback: "no_image.jpg", size: "40x40" %>
                 </td>
                 <td><%= user.name %></td>
                 <td><%= link_to "Show", user_path(user.id) %></td>

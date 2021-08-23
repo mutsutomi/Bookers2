@@ -14,7 +14,7 @@ class BooksController < ApplicationController
       redirect_to book_path(@book.id), notice: "You have created book successfully."
     else
   # 作成に失敗した場合、 /books/ に戻してバリデーションエラーを表示する
-      flash.now[:danger] = "failed"
+      @books = Book.all
       render :index
   # view 側で、 @book.errors を使ってエラーを表示する。
     end
@@ -34,7 +34,6 @@ class BooksController < ApplicationController
     if @book.update(book_params)
       redirect_to book_path(@book.id), notice: "You have updated book successfully."
     else
-      flash.now[:danger] = "failed"
       render :edit
     end
   end
