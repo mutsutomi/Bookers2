@@ -1,12 +1,8 @@
 class BooksController < ApplicationController
   def index
     @books = Book.all
-   
+    @book = Book.new
     @user = User.find(current_user.id)
-  end
-
-  def new
-    @book =Book.new
   end
 
   def create
@@ -17,7 +13,7 @@ class BooksController < ApplicationController
   # 作成に成功した場合、 /books/{book_id} にリダイレクト
   redirect_to book_path(@book.id)
     else
-  # 作成に失敗した場合、 /books/new に戻してバリデーションエラーを表示する
+  # 作成に失敗した場合、 /books/ に戻してバリデーションエラーを表示する
   render :index
   # view 側で、 @book.errors を使ってエラーを表示する。
     end
@@ -27,9 +23,9 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @user = User.find(@book.user_id)
   end
-  
+
   def edit
-    
+
   end
 
   def destroy
