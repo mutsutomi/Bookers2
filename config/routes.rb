@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   get "about" => "homes#about"
   devise_for :users
   resources :books, only: [:index, :show, :new, :create]
-  resources :users, only: [:index, :show, :edit]
+  delete "books/:id" => "books#destroy", as: "destroy_book"
+  resources :users, only: [:index, :show, :edit, :update]
  end
