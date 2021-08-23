@@ -3,6 +3,7 @@ class BooksController < ApplicationController
     @books = Book.all
     @book = Book.new
     @user = User.find(current_user.id)
+    @users = User.all
   end
 
   def create
@@ -10,13 +11,11 @@ class BooksController < ApplicationController
     @user = User.find(current_user.id)
     @book.user_id = current_user.id
     if @book.save
-  # 作成に成功した場合、 /books/{book_id} にリダイレクト
       redirect_to book_path(@book.id), notice: "You have created book successfully."
     else
-  # 作成に失敗した場合、 /books/ に戻してバリデーションエラーを表示する
       @books = Book.all
+      @users = User.all
       render :index
-  # view 側で、 @book.errors を使ってエラーを表示する。
     end
   end
 
