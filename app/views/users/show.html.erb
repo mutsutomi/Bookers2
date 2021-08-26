@@ -40,12 +40,11 @@
                     <% end %>
                   </td>
                 <% end %>
-
+                <td>コメント数：<%= book.book_comments.count %></td>
               </tr>
             <% end %>
           </tbody>
         </table>
-        <p>コメント数：<%= @user.book_comments.count %></p>
       </div>
     </div>
   </div>
